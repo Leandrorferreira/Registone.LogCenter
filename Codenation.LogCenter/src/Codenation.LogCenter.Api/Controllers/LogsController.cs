@@ -34,6 +34,7 @@ namespace Codenation.LogCenter.Api.Controllers
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
         public ActionResult<IList<LogDto>> Get()
         {
             try
@@ -50,6 +51,7 @@ namespace Codenation.LogCenter.Api.Controllers
         [HttpGet("fileds")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
         public ActionResult<IList<LogDto>> GetLogsFiled()
         {
             try
@@ -65,6 +67,7 @@ namespace Codenation.LogCenter.Api.Controllers
         [HttpGet("title/{title}"), ActionName("title")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
         public ActionResult<IList<LogDto>> GetByTitle(string title)
         {
             if (string.IsNullOrEmpty(title)) return BadRequest("Title is required");
@@ -79,9 +82,10 @@ namespace Codenation.LogCenter.Api.Controllers
             }
         }
 
-        [HttpGet("level/{level}")]
+        [HttpGet("level/{level}"), ActionName("level")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
         public ActionResult<IList<LogDto>> GetByLevel(string level)
         {
             if (string.IsNullOrEmpty(level)) return BadRequest("Level is required");
@@ -99,6 +103,7 @@ namespace Codenation.LogCenter.Api.Controllers
         [HttpGet("origin/{origin}"), ActionName("origin")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
         public ActionResult<IList<LogDto>> GetByOrigin(string origin)
         {
             if (string.IsNullOrEmpty(origin)) return BadRequest("Origin is required");
@@ -115,6 +120,7 @@ namespace Codenation.LogCenter.Api.Controllers
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status422UnprocessableEntity)]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
         public ActionResult Post([FromBody] LogRegisterDto log)
         {
             try
@@ -132,6 +138,7 @@ namespace Codenation.LogCenter.Api.Controllers
         [HttpPut("{id}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
         public ActionResult Put(int id)
         {
             try
@@ -148,6 +155,7 @@ namespace Codenation.LogCenter.Api.Controllers
         [HttpDelete("{id}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
         public ActionResult Delete(int id)
         {
             try

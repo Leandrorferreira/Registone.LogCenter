@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
+using System;
 using System.Text;
 
 namespace Codenation.LogCenter.Api.Controllers
@@ -40,10 +41,16 @@ namespace Codenation.LogCenter.Api.Controllers
         public ActionResult Register(UserDto user)
         {
             if (!ModelState.IsValid) return BadRequest(ModelState);
-
-            _service.Register(user);
+            try
+            {
+                _service.Register(user);
+            }
+            catch (Exception ex)
+            {
+                return UnprocessableEntity(ex.Message);
+            }
                         
-            return Ok();
+            return Created(string.Empty, user);
         }
 
         [HttpPost("login")]
@@ -53,14 +60,21 @@ namespace Codenation.LogCenter.Api.Controllers
         {
             if (!ModelState.IsValid) return BadRequest(ModelState);
 
-            var result = _service.Authenticate(user, Encoding.ASCII.GetBytes(_appSettings.SecretKey));
-
-            if (result is null)
+            try
             {
-                return BadRequest();
-            }
+                var result = _service.Authenticate(user, Encoding.ASCII.GetBytes(_appSettings.SecretKey));
 
-            return Ok(result);
+                if (result is null)
+                {
+                    return BadRequest();
+                }
+
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                return NotFound(ex.Message);
+            }    
         }
 
         #endregion

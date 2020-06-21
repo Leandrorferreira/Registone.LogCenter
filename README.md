@@ -14,7 +14,7 @@ This project was carried out based on the lessons learned from Codenation's Acel
 - Swagger
 
 ### Clonando o repositório:
-  
+https://github.com/Leandrorferreira/Codenation.LogCenter.git
   
 ### Documentação API:
 http://localhost:5000/swagger/index.html

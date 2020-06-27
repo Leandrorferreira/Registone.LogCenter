@@ -10,7 +10,7 @@ using System.Collections.Generic;
 namespace Codenation.LogCenter.Api.Controllers
 {
     [Route("api/log")]
-    [Authorize(Roles = "Default")]
+    [Authorize]
     [ApiController]  
     public class LogsController : ControllerBase
     {

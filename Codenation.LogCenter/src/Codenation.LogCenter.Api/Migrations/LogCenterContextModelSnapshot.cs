@@ -80,11 +80,6 @@ namespace Codenation.LogCenter.Api.Migrations
                         .HasColumnType("nvarchar(50)")
                         .HasMaxLength(50);
 
-                    b.Property<string>("Role")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(30)")
-                        .HasMaxLength(30);
-
                     b.HasKey("Id");
 
                     b.ToTable("User");

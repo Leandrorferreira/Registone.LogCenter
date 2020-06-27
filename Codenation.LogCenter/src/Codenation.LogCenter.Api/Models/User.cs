@@ -21,10 +21,6 @@ namespace Codenation.LogCenter.Api.Models
         [StringLength(50)]
         public string Password { get; set; }
 
-        [Required]
-        [StringLength(30)]
-        public string Role { get; set; }
-
         public virtual ICollection<Log> Logs { get; set; }
     }
 }

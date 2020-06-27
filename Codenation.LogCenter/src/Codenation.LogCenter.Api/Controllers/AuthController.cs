@@ -50,7 +50,7 @@ namespace Codenation.LogCenter.Api.Controllers
                 return UnprocessableEntity(ex.Message);
             }
                         
-            return Created(string.Empty, user);
+            return Created(string.Empty, user.Email);
         }
 
         [HttpPost("login")]

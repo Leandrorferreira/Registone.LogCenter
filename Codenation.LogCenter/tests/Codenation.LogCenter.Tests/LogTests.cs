@@ -44,7 +44,6 @@ namespace Codenation.LogCenter.Tests
         {
             var log = new LogRegisterDto
             {
-                CreatedAt = new DateTime(),
                 Level = "Error",
                 Origin = "Origin",
                 Details = "Details",
@@ -124,21 +123,18 @@ namespace Codenation.LogCenter.Tests
                 new User
                 {
                     Id = 1,
-                    Role = "Default",
                     Email = "test@test.com",
                     Password = "12345"
                 },
                 new User
                 {
                     Id = 2,
-                    Role = "Default",
                     Email = "leandro@test.com",
                     Password = "@lOpIng"
                 },
                 new User
                 {
                     Id = 3,
-                    Role = "Default",
                     Email = "user@gmail.com",
                     Password = "options123"
                 }

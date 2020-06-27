@@ -1,8 +1,9 @@
-﻿using Microsoft.EntityFrameworkCore.Migrations;
+﻿using System;
+using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Codenation.LogCenter.Api.Migrations
 {
-    public partial class Initial : Migration
+    public partial class initial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -13,8 +14,7 @@ namespace Codenation.LogCenter.Api.Migrations
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Email = table.Column<string>(maxLength: 100, nullable: false),
-                    Password = table.Column<string>(maxLength: 50, nullable: false),
-                    Role = table.Column<string>(maxLength: 30, nullable: false)
+                    Password = table.Column<string>(maxLength: 50, nullable: false)
                 },
                 constraints: table =>
                 {
@@ -32,7 +32,8 @@ namespace Codenation.LogCenter.Api.Migrations
                     Filed = table.Column<bool>(nullable: false),
                     Details = table.Column<string>(maxLength: 200, nullable: false),
                     Origin = table.Column<string>(maxLength: 50, nullable: false),
-                    UserId = table.Column<int>(nullable: false)
+                    UserId = table.Column<int>(nullable: false),
+                    CreatedAt = table.Column<DateTime>(nullable: false)
                 },
                 constraints: table =>
                 {

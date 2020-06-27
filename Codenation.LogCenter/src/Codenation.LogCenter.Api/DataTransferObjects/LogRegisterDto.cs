@@ -1,5 +1,4 @@
-﻿using System;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace Codenation.LogCenter.Api.DataTransferObjects
 {
@@ -16,8 +15,6 @@ namespace Codenation.LogCenter.Api.DataTransferObjects
 
         [Required(ErrorMessage = "Origin is required.")]
         public string Origin { get; set; }
-
-        public DateTime CreatedAt { get; set; }
 
         [Required(ErrorMessage = "Level is required.")]
         public string UserEmail { get; set; }

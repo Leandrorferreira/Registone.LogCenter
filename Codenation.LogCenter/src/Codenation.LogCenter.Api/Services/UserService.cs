@@ -12,13 +12,15 @@ namespace Codenation.LogCenter.Api.Services
 
         #endregion
 
-        #region MyRegion
+        #region Constructor
         public UserService(LogCenterContext context)
         {
             Repository = new UserRepository(context);
         }
 
         #endregion
+
+        #region Methods
 
         public UserAuthenticatedDto Authenticate(UserDto user, byte[] key)
         {
@@ -44,11 +46,12 @@ namespace Codenation.LogCenter.Api.Services
             var userRegister = new User
             {
                 Email = user.Email,
-                Password = user.Password,
-                Role = "Default"
+                Password = user.Password
             };
 
             Repository.Register(userRegister);
         }
+        
+        #endregion
     }
 }

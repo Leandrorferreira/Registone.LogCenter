@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Codenation.LogCenter.Api.Migrations
 {
     [DbContext(typeof(LogCenterContext))]
-    [Migration("20200613202042_add-datetime")]
-    partial class adddatetime
+    [Migration("20200621131225_initial")]
+    partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -81,11 +81,6 @@ namespace Codenation.LogCenter.Api.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(50)")
                         .HasMaxLength(50);
-
-                    b.Property<string>("Role")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(30)")
-                        .HasMaxLength(30);
 
                     b.HasKey("Id");
 

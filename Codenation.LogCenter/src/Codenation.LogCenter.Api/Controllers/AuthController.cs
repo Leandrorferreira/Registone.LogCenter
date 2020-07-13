@@ -1,7 +1,6 @@
 ﻿using Codenation.LogCenter.Api.Configurations;
 using Codenation.LogCenter.Api.DataTransferObjects;
-using Codenation.LogCenter.Api.Repositories;
-using Codenation.LogCenter.Api.Services;
+using Codenation.LogCenter.Api.Interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -18,16 +17,16 @@ namespace Codenation.LogCenter.Api.Controllers
     {
         #region Properties
 
-        private readonly UserService _service;
+        private readonly IUserService _service;
         private readonly AppSettings _appSettings;
 
         #endregion
 
         #region Constructor
 
-        public AuthController(LogCenterContext context, IOptions<AppSettings> appSettings)
+        public AuthController(IUserService service, IOptions<AppSettings> appSettings)
         {
-            _service = new UserService(context);
+            _service = service;
             _appSettings = appSettings.Value;
         }
 

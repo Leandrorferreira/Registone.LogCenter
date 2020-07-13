@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Codenation.LogCenter.Api.Models
@@ -20,7 +19,5 @@ namespace Codenation.LogCenter.Api.Models
         [DataType(DataType.Password)]
         [StringLength(50)]
         public string Password { get; set; }
-
-        public virtual ICollection<Log> Logs { get; set; }
     }
 }

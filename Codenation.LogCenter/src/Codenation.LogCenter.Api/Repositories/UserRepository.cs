@@ -1,10 +1,11 @@
-﻿using Codenation.LogCenter.Api.Models;
+﻿using Codenation.LogCenter.Api.Interfaces;
+using Codenation.LogCenter.Api.Models;
 using System;
 using System.Linq;
 
 namespace Codenation.LogCenter.Api.Repositories
 {
-    public class UserRepository
+    public class UserRepository : IUserRepository
     {
         #region Properties
        

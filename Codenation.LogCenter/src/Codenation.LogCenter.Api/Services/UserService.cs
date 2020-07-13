@@ -1,21 +1,21 @@
 ﻿using Codenation.LogCenter.Api.DataTransferObjects;
 using Codenation.LogCenter.Api.Exceptions;
+using Codenation.LogCenter.Api.Interfaces;
 using Codenation.LogCenter.Api.Models;
-using Codenation.LogCenter.Api.Repositories;
 
 namespace Codenation.LogCenter.Api.Services
 {
-    public class UserService
+    public class UserService : IUserService
     {
         #region Properties
-        private UserRepository Repository { get; set; }
+        private IUserRepository Repository { get; set; }
 
         #endregion
 
         #region Constructor
-        public UserService(LogCenterContext context)
+        public UserService(IUserRepository repository)
         {
-            Repository = new UserRepository(context);
+            Repository = repository;
         }
 
         #endregion

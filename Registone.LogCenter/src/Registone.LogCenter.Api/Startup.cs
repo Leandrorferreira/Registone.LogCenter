@@ -1,6 +1,6 @@
 using Registone.LogCenter.Api.Configurations;
 using Registone.LogCenter.Domain.Interfaces;
-using Registone.LogCenter.Api.Repositories;
+using Registone.LogCenter.Data.Repositories;
 using Registone.LogCenter.Api.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -9,6 +9,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using System.Text;
+using Registone.LogCenter.Data;
 
 namespace Registone.LogCenter.Api
 {
@@ -27,7 +28,10 @@ namespace Registone.LogCenter.Api
 
             services.AddControllers();
 
-            services.AddDbContext<LogCenterContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+            services.AddDbContext<LogCenterContext>(
+                options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"),
+                x => x.MigrationsAssembly("Registone.LogCenter.Data"))
+                );
 
             services.AddScoped<ILogRepository, LogRepository>();
             services.AddScoped<ILogService, LogService>(); 

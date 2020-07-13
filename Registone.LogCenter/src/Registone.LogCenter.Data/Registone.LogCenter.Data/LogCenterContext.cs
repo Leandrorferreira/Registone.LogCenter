@@ -1,7 +1,7 @@
-﻿using Registone.LogCenter.Domain.Models;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
+using Registone.LogCenter.Domain.Models;
 
-namespace Registone.LogCenter.Api.Repositories
+namespace Registone.LogCenter.Data
 {
     public class LogCenterContext : DbContext
     {
@@ -12,7 +12,7 @@ namespace Registone.LogCenter.Api.Repositories
         {
         }
 
-        public LogCenterContext(DbContextOptions<LogCenterContext> options): base(options)
+        public LogCenterContext(DbContextOptions<LogCenterContext> options) : base(options)
         {
         }
     }

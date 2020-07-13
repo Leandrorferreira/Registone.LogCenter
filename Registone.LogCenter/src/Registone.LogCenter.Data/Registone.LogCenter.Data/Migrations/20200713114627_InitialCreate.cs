@@ -1,9 +1,9 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace Registone.LogCenter.Api.Migrations
+namespace Registone.LogCenter.Data.Migrations
 {
-    public partial class initial : Migration
+    public partial class InitialCreate : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -22,24 +22,24 @@ namespace Registone.LogCenter.Api.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Log",
+                name: "Logs",
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Level = table.Column<string>(maxLength: 50, nullable: false),
-                    Title = table.Column<string>(maxLength: 50, nullable: false),
+                    Level = table.Column<string>(nullable: true),
+                    Title = table.Column<string>(nullable: true),
                     Filed = table.Column<bool>(nullable: false),
-                    Details = table.Column<string>(maxLength: 200, nullable: false),
-                    Origin = table.Column<string>(maxLength: 50, nullable: false),
+                    Details = table.Column<string>(nullable: true),
+                    Origin = table.Column<string>(nullable: true),
                     UserId = table.Column<int>(nullable: false),
                     CreatedAt = table.Column<DateTime>(nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Log", x => x.Id);
+                    table.PrimaryKey("PK_Logs", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Log_User_UserId",
+                        name: "FK_Logs_User_UserId",
                         column: x => x.UserId,
                         principalTable: "User",
                         principalColumn: "Id",
@@ -47,15 +47,15 @@ namespace Registone.LogCenter.Api.Migrations
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_Log_UserId",
-                table: "Log",
+                name: "IX_Logs_UserId",
+                table: "Logs",
                 column: "UserId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Log");
+                name: "Logs");
 
             migrationBuilder.DropTable(
                 name: "User");

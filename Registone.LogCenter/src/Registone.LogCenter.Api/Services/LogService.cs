@@ -2,9 +2,10 @@
 using Registone.LogCenter.Domain.Exceptions;
 using Registone.LogCenter.Domain.Interfaces;
 using Registone.LogCenter.Domain.Models;
-using Registone.LogCenter.Api.Repositories;
+using Registone.LogCenter.Data.Repositories;
 using System;
 using System.Collections.Generic;
+using Registone.LogCenter.Data;
 
 namespace Registone.LogCenter.Api.Services
 {

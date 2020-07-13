@@ -1,11 +1,11 @@
-﻿using Registone.LogCenter.Domain.Interfaces;
+﻿using Microsoft.EntityFrameworkCore;
+using Registone.LogCenter.Domain.Interfaces;
 using Registone.LogCenter.Domain.Models;
-using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Registone.LogCenter.Api.Repositories
+namespace Registone.LogCenter.Data.Repositories
 {
     public class LogRepository : ILogRepository
     {

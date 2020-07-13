@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Registone.LogCenter.Domain.Models
@@ -19,5 +20,7 @@ namespace Registone.LogCenter.Domain.Models
         [DataType(DataType.Password)]
         [StringLength(50)]
         public string Password { get; set; }
+
+        public virtual IList<Log> Logs { get; set; }
     }
 }

@@ -3,7 +3,7 @@ using Registone.LogCenter.Domain.Models;
 using System;
 using System.Linq;
 
-namespace Registone.LogCenter.Api.Repositories
+namespace Registone.LogCenter.Data.Repositories
 {
     public class UserRepository : IUserRepository
     {

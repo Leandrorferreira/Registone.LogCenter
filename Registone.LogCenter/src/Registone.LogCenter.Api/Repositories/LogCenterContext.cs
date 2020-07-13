@@ -1,4 +1,4 @@
-﻿using Registone.LogCenter.Api.Models;
+﻿using Registone.LogCenter.Domain.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace Registone.LogCenter.Api.Repositories

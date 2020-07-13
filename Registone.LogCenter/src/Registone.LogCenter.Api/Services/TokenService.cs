@@ -1,4 +1,4 @@
-﻿using Registone.LogCenter.Api.Models;
+﻿using Registone.LogCenter.Domain.Models;
 using Microsoft.IdentityModel.Tokens;
 using System;
 using System.IdentityModel.Tokens.Jwt;

@@ -1,5 +1,5 @@
-﻿using Registone.LogCenter.Api.DataTransferObjects;
-using Registone.LogCenter.Api.Interfaces;
+﻿using Registone.LogCenter.Domain.DataTransferObjects;
+using Registone.LogCenter.Domain.Interfaces;
 using Registone.LogCenter.Api.Repositories;
 using Registone.LogCenter.Api.Services;
 using Microsoft.AspNetCore.Authorization;

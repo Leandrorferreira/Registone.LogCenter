@@ -1,6 +1,6 @@
-﻿using Registone.LogCenter.Api.DataTransferObjects;
+﻿using Registone.LogCenter.Domain.DataTransferObjects;
 
-namespace Registone.LogCenter.Api.Interfaces
+namespace Registone.LogCenter.Domain.Interfaces
 {
     public interface IUserService
     {

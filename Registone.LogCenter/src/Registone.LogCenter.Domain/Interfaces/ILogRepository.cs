@@ -1,7 +1,7 @@
-﻿using Registone.LogCenter.Api.Models;
+﻿using Registone.LogCenter.Domain.Models;
 using System.Collections.Generic;
 
-namespace Registone.LogCenter.Api.Interfaces
+namespace Registone.LogCenter.Domain.Interfaces
 {
     public interface ILogRepository
     {

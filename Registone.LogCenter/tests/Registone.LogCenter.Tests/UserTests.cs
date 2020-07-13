@@ -1,5 +1,5 @@
-using Registone.LogCenter.Api.DataTransferObjects;
-using Registone.LogCenter.Api.Interfaces;
+using Registone.LogCenter.Domain.DataTransferObjects;
+using Registone.LogCenter.Domain.Interfaces;
 using System.Text;
 using Xunit;
 

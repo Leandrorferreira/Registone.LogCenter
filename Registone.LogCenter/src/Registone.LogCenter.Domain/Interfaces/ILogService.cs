@@ -1,7 +1,7 @@
-﻿using Registone.LogCenter.Api.DataTransferObjects;
+﻿using Registone.LogCenter.Domain.DataTransferObjects;
 using System.Collections.Generic;
 
-namespace Registone.LogCenter.Api.Interfaces
+namespace Registone.LogCenter.Domain.Interfaces
 {
     public interface ILogService
     {

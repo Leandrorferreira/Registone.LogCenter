@@ -1,6 +1,6 @@
-﻿using Registone.LogCenter.Api.Models;
+﻿using Registone.LogCenter.Domain.Models;
 
-namespace Registone.LogCenter.Api.Interfaces
+namespace Registone.LogCenter.Domain.Interfaces
 {
     public interface IUserRepository
     {

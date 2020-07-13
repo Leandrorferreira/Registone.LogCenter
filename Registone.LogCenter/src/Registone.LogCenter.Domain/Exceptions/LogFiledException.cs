@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Registone.LogCenter.Api.Exceptions
+namespace Registone.LogCenter.Domain.Exceptions
 {
     [Serializable]
     public class LogFiledException : Exception

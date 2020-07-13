@@ -1,5 +1,5 @@
-﻿using Registone.LogCenter.Api.Interfaces;
-using Registone.LogCenter.Api.Models;
+﻿using Registone.LogCenter.Domain.Interfaces;
+using Registone.LogCenter.Domain.Models;
 using System;
 using System.Linq;
 

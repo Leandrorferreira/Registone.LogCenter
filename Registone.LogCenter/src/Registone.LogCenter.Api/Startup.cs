@@ -1,5 +1,5 @@
 using Registone.LogCenter.Api.Configurations;
-using Registone.LogCenter.Api.Interfaces;
+using Registone.LogCenter.Domain.Interfaces;
 using Registone.LogCenter.Api.Repositories;
 using Registone.LogCenter.Api.Services;
 using Microsoft.AspNetCore.Builder;

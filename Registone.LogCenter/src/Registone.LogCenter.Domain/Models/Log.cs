@@ -2,7 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Registone.LogCenter.Api.Models
+namespace Registone.LogCenter.Domain.Models
 {
     [Table("Log")]
     public class Log

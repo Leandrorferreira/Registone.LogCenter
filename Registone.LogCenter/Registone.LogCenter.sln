@@ -5,11 +5,15 @@ VisualStudioVersion = 16.0.30104.148
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{09EB0C71-F761-436F-9768-EFC8F1E1E74B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Registone.LogCenter.Tests", "tests\Registone.LogCenter.Tests\Registone.LogCenter.Tests.csproj", "{D630D683-058F-4F4B-8B21-D35B41328F68}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Registone.LogCenter.Tests", "tests\Registone.LogCenter.Tests\Registone.LogCenter.Tests.csproj", "{D630D683-058F-4F4B-8B21-D35B41328F68}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{9C9A6373-B334-4FC9-A93D-951DC1197AC6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Registone.LogCenter.Api", "src\Registone.LogCenter.Api\Registone.LogCenter.Api.csproj", "{C938DD38-FE49-4BD0-B211-224B1393862D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Registone.LogCenter.Api", "src\Registone.LogCenter.Api\Registone.LogCenter.Api.csproj", "{C938DD38-FE49-4BD0-B211-224B1393862D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Registone.LogCenter.Data", "src\Registone.LogCenter.Data\Registone.LogCenter.Data\Registone.LogCenter.Data.csproj", "{45E20063-9537-4592-BF09-C6DE66A9F0D7}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Registone.LogCenter.Domain", "src\Registone.LogCenter.Domain\Registone.LogCenter.Domain.csproj", "{E7367FC9-CF5E-468F-A57F-86234FABE1E9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -25,6 +29,14 @@ Global
 		{C938DD38-FE49-4BD0-B211-224B1393862D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C938DD38-FE49-4BD0-B211-224B1393862D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C938DD38-FE49-4BD0-B211-224B1393862D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{45E20063-9537-4592-BF09-C6DE66A9F0D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{45E20063-9537-4592-BF09-C6DE66A9F0D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{45E20063-9537-4592-BF09-C6DE66A9F0D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{45E20063-9537-4592-BF09-C6DE66A9F0D7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E7367FC9-CF5E-468F-A57F-86234FABE1E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E7367FC9-CF5E-468F-A57F-86234FABE1E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E7367FC9-CF5E-468F-A57F-86234FABE1E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E7367FC9-CF5E-468F-A57F-86234FABE1E9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -32,6 +44,8 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{D630D683-058F-4F4B-8B21-D35B41328F68} = {09EB0C71-F761-436F-9768-EFC8F1E1E74B}
 		{C938DD38-FE49-4BD0-B211-224B1393862D} = {9C9A6373-B334-4FC9-A93D-951DC1197AC6}
+		{45E20063-9537-4592-BF09-C6DE66A9F0D7} = {9C9A6373-B334-4FC9-A93D-951DC1197AC6}
+		{E7367FC9-CF5E-468F-A57F-86234FABE1E9} = {9C9A6373-B334-4FC9-A93D-951DC1197AC6}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C1AA37ED-1E5E-4639-AA2C-E74670CE2757}

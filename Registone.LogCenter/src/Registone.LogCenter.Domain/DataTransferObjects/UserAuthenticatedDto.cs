@@ -1,4 +1,4 @@
-﻿namespace Registone.LogCenter.Api.DataTransferObjects
+﻿namespace Registone.LogCenter.Domain.DataTransferObjects
 {
     public class UserAuthenticatedDto
     {

@@ -25,5 +25,10 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="5.4.1" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Registone.LogCenter.Data\Registone.LogCenter.Data\Registone.LogCenter.Data.csproj" />
+    <ProjectReference Include="..\Registone.LogCenter.Domain\Registone.LogCenter.Domain.csproj" />
+  </ItemGroup>
+
 
 </Project>

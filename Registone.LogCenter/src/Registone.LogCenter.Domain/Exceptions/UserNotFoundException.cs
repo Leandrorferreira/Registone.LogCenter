@@ -1,7 +1,6 @@
-﻿using Registone.LogCenter.Api.Models;
-using System;
+﻿using System;
 
-namespace Registone.LogCenter.Api.Exceptions
+namespace Registone.LogCenter.Domain.Exceptions
 {
     [Serializable]
     public class UserNotFoundException : Exception

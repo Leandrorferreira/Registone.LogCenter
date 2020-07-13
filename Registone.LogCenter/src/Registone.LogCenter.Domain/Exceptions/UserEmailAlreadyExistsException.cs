@@ -1,7 +1,6 @@
 ﻿using System;
-using System.Runtime.Serialization;
 
-namespace Registone.LogCenter.Api.Exceptions
+namespace Registone.LogCenter.Domain.Exceptions
 {
     [Serializable]
     public class UserEmailAlreadyExistsException : Exception

@@ -1,5 +1,6 @@
 ﻿using Codenation.LogCenter.Api.DataTransferObjects;
 using Codenation.LogCenter.Api.Exceptions;
+using Codenation.LogCenter.Api.Interfaces;
 using Codenation.LogCenter.Api.Models;
 using Codenation.LogCenter.Api.Repositories;
 using System;
@@ -7,20 +8,20 @@ using System.Collections.Generic;
 
 namespace Codenation.LogCenter.Api.Services
 {
-    public class LogService
+    public class LogService : ILogService
     {
         #region Properties
 
-        private LogRepository LogRepository { get; set; }
+        private ILogRepository LogRepository { get; set; }
 
         private UserRepository UserRepository { get; set; }
 
         #endregion
 
         #region Constructor
-        public LogService(LogCenterContext context)
+        public LogService(ILogRepository logRepository, LogCenterContext context)
         {
-            LogRepository = new LogRepository(context);
+            LogRepository = logRepository;
             UserRepository = new UserRepository(context);
         }
 

@@ -1,4 +1,5 @@
 ﻿using Codenation.LogCenter.Api.DataTransferObjects;
+using Codenation.LogCenter.Api.Interfaces;
 using Codenation.LogCenter.Api.Repositories;
 using Codenation.LogCenter.Api.Services;
 using Microsoft.AspNetCore.Authorization;
@@ -16,15 +17,15 @@ namespace Codenation.LogCenter.Api.Controllers
     {
         #region Properties
 
-        private readonly LogService _service;
+        private readonly ILogService _service;
        
         #endregion
 
         #region Constructor
 
-        public LogsController(LogCenterContext context)
+        public LogsController(ILogService service)
         {
-            _service = new LogService(context);      
+            _service = service;      
         }
 
         #endregion

@@ -1,12 +1,5 @@
 using Codenation.LogCenter.Api.DataTransferObjects;
-using Codenation.LogCenter.Api.Models;
-using Codenation.LogCenter.Api.Repositories;
-using Codenation.LogCenter.Api.Services;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.DependencyInjection;
-using Moq;
-using System.Collections.Generic;
-using System.Linq;
+using Codenation.LogCenter.Api.Interfaces;
 using System.Text;
 using Xunit;
 
@@ -17,15 +10,15 @@ namespace Codenation.LogCenter.Tests
 
         #region Properties
 
-        private UserService userService;
+        private IUserService userService;
 
         #endregion
 
         #region Constructor
 
-        public UserTests()
+        public UserTests(IUserService service)
         {
-            userService = new UserService(GetContext());
+            userService = service;
         }
 
         #endregion
@@ -61,77 +54,6 @@ namespace Codenation.LogCenter.Tests
             Assert.Equal("test@test.com", result.UserEmail);
         }
        
-        #endregion
-
-        #region Private Methods
-
-        private LogCenterContext GetContext()
-        {
-            var context = new LogCenterContext(GetOptions());
-
-            var userDbSet = GetUserDbSet();            
-
-            context.Users = userDbSet.Object;
-
-            return context;
-        }
-
-        private IQueryable<User> GetUsers()
-        {
-            return new List<User>
-            {
-                new User
-                {
-                    Id = 1,
-                    Email = "test@test.com",
-                    Password = "12345"
-                },
-                new User
-                {
-                    Id = 2,
-                    Email = "leandro@test.com",
-                    Password = "@lOpIng"
-                },
-                new User
-                {
-                    Id = 3,
-                    Email = "user@gmail.com",
-                    Password = "options123"
-                }
-
-            }.AsQueryable();
-        }
-
-        private ServiceProvider GetServiceProvider()
-        {
-            return new ServiceCollection()
-           .AddEntityFrameworkInMemoryDatabase()
-           .BuildServiceProvider();
-        }
-
-        private DbContextOptions<LogCenterContext> GetOptions()
-        {
-            var serviceProvider = GetServiceProvider();
-
-            return new DbContextOptionsBuilder<LogCenterContext>()
-               .UseInMemoryDatabase("LogCenter")
-               .UseInternalServiceProvider(serviceProvider)
-               .Options;
-        }
-
-        private Mock<DbSet<User>> GetUserDbSet()
-        {
-            var users = GetUsers();
-
-            var userDbSet = new Mock<DbSet<User>>();
-            userDbSet.As<IQueryable<User>>().Setup(m => m.Provider).Returns(users.Provider);
-            userDbSet.As<IQueryable<User>>().Setup(m => m.Expression).Returns(users.Expression);
-            userDbSet.As<IQueryable<User>>().Setup(m => m.ElementType).Returns(users.ElementType);
-            userDbSet.As<IQueryable<User>>().Setup(m => m.GetEnumerator()).Returns(users.GetEnumerator());
-
-            return userDbSet;
-        }
-
-        #endregion
+        #endregion              
     }
 }

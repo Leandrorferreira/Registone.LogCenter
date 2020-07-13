@@ -1,11 +1,13 @@
-﻿using Codenation.LogCenter.Api.Models;
+﻿using Codenation.LogCenter.Api.Interfaces;
+using Codenation.LogCenter.Api.Models;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 
 namespace Codenation.LogCenter.Api.Repositories
 {
-    public class LogRepository
+    public class LogRepository : ILogRepository
     {
         #region Properties
 
@@ -90,7 +92,7 @@ namespace Codenation.LogCenter.Api.Repositories
         {
             try
             {
-                return Context.Logs.Where(l => l.Id == id).FirstOrDefault();
+                return Context.Logs.AsNoTracking().Where(l => l.Id == id).FirstOrDefault();
             }
             catch (Exception ex)
             {
@@ -102,7 +104,7 @@ namespace Codenation.LogCenter.Api.Repositories
         {
             try
             {
-                return Context.Logs.Where(x => x.Title == title && x.Filed == false).ToList();
+                return Context.Logs.AsNoTracking().Where(x => x.Title == title && x.Filed == false).ToList();
             }
             catch (Exception ex)
             {
@@ -114,7 +116,7 @@ namespace Codenation.LogCenter.Api.Repositories
         {
             try
             {
-                return Context.Logs.Where(x => x.Level == level && x.Filed == false).ToList();
+                return Context.Logs.AsNoTracking().Where(x => x.Level == level && x.Filed == false).ToList();
             }
             catch (Exception ex)
             {
@@ -126,7 +128,7 @@ namespace Codenation.LogCenter.Api.Repositories
         {
             try
             {
-                return Context.Logs.Where(x => x.Origin == origin && x.Filed == false).ToList();
+                return Context.Logs.AsNoTracking().Where(x => x.Origin == origin && x.Filed == false).ToList();
             }
             catch (Exception ex)
             {

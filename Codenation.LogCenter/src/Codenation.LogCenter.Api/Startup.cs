@@ -1,5 +1,7 @@
 using Codenation.LogCenter.Api.Configurations;
+using Codenation.LogCenter.Api.Interfaces;
 using Codenation.LogCenter.Api.Repositories;
+using Codenation.LogCenter.Api.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
@@ -24,8 +26,13 @@ namespace Codenation.LogCenter.Api
             services.AddCors();
 
             services.AddControllers();
-         
+
             services.AddDbContext<LogCenterContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+
+            services.AddScoped<ILogRepository, LogRepository>();
+            services.AddScoped<ILogService, LogService>(); 
+            services.AddScoped<IUserRepository, UserRepository>();
+            services.AddScoped<IUserService, UserService>();
 
             var appSettingsSection = Configuration.GetSection("AppSettings");
 
@@ -37,9 +44,9 @@ namespace Codenation.LogCenter.Api
 
             services.AddJwtConfiguration(Configuration, key);
 
-            services.AddSwaggerConfiguration();            
+            services.AddSwaggerConfiguration();
         }
-              
+
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())
@@ -57,8 +64,8 @@ namespace Codenation.LogCenter.Api
 
             app.UseAuthentication();
 
-            app.UseAuthorization();            
-            
+            app.UseAuthorization();
+
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();

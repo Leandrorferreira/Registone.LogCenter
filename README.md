@@ -1,4 +1,4 @@
-# REGISTONE API (Final Project)
+# REGISTONE API 
 
 ## What is the Registone Project?
 

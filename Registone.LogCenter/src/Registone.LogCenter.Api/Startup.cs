@@ -1,7 +1,7 @@
 using Registone.LogCenter.Api.Configurations;
 using Registone.LogCenter.Domain.Interfaces;
 using Registone.LogCenter.Data.Repositories;
-using Registone.LogCenter.Api.Services;
+using Registone.LogCenter.Domain.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;

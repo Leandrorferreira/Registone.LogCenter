@@ -4,7 +4,7 @@ using System;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 
-namespace Registone.LogCenter.Api.Services
+namespace Registone.LogCenter.Domain.Services
 {
     public static class TokenService
     {

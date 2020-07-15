@@ -4,7 +4,7 @@ using Registone.LogCenter.Domain.Interfaces;
 using Registone.LogCenter.Domain.Models;
 using Registone.LogCenter.Services;
 
-namespace Registone.LogCenter.Api.Services
+namespace Registone.LogCenter.Domain.Services
 {
     public class UserService : IUserService
     {

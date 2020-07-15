@@ -14,7 +14,6 @@ namespace Registone.LogCenter.Data.Mapping
             builder.Property(x => x.Title).HasColumnType("varchar(50)").IsRequired();
             builder.Property(x => x.Details).HasColumnType("varchar(200)").IsRequired();
             builder.Property(x => x.Origin).HasColumnType("varchar(50)").IsRequired();
-
             builder.Property(x => x.UserId).HasColumnName("UserId").IsRequired();
             builder.HasOne(x => x.User).WithMany(y => y.Logs).HasForeignKey(x => x.UserId);
             

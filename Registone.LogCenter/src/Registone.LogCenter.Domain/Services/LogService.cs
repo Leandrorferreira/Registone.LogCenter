@@ -2,33 +2,30 @@
 using Registone.LogCenter.Domain.Exceptions;
 using Registone.LogCenter.Domain.Interfaces;
 using Registone.LogCenter.Domain.Models;
-using Registone.LogCenter.Data.Repositories;
 using System;
 using System.Collections.Generic;
-using Registone.LogCenter.Data;
 
-namespace Registone.LogCenter.Api.Services
+namespace Registone.LogCenter.Domain.Services
 {
     public class LogService : ILogService
     {
         #region Properties
 
         private ILogRepository LogRepository { get; set; }
-
-        private UserRepository UserRepository { get; set; }
+        private IUserRepository UserRepository { get; set; }
 
         #endregion
 
         #region Constructor
-        public LogService(ILogRepository logRepository, LogCenterContext context)
+        public LogService(ILogRepository logRepository, IUserRepository userRepository)
         {
             LogRepository = logRepository;
-            UserRepository = new UserRepository(context);
+            UserRepository = userRepository;
         }
 
         #endregion
 
-        #region MyRegion
+        #region Methods
 
         public IList<LogDto> GetLogs()
         {

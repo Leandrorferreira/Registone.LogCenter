@@ -17,8 +17,8 @@ namespace Registone.LogCenter.Api.Controllers
     {
         #region Properties
 
-        private readonly IUserService _service;
-        private readonly AppSettings _appSettings;
+        private readonly IUserService Service;
+        private readonly AppSettings AppSettings;
 
         #endregion
 
@@ -26,8 +26,8 @@ namespace Registone.LogCenter.Api.Controllers
 
         public AuthController(IUserService service, IOptions<AppSettings> appSettings)
         {
-            _service = service;
-            _appSettings = appSettings.Value;
+            Service = service;
+            AppSettings = appSettings.Value;
         }
 
         #endregion
@@ -42,7 +42,7 @@ namespace Registone.LogCenter.Api.Controllers
             if (!ModelState.IsValid) return BadRequest(ModelState);
             try
             {
-                _service.Register(user);
+                Service.Register(user);
             }
             catch (Exception ex)
             {
@@ -61,7 +61,7 @@ namespace Registone.LogCenter.Api.Controllers
 
             try
             {
-                var result = _service.Authenticate(user, Encoding.ASCII.GetBytes(_appSettings.SecretKey));
+                var result = Service.Authenticate(user, Encoding.ASCII.GetBytes(AppSettings.SecretKey));
 
                 if (result is null)
                 {

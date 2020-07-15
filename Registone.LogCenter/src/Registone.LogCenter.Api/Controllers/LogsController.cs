@@ -15,7 +15,7 @@ namespace Registone.LogCenter.Api.Controllers
     {
         #region Properties
 
-        private readonly ILogService _service;
+        private readonly ILogService Service;
        
         #endregion
 
@@ -23,7 +23,7 @@ namespace Registone.LogCenter.Api.Controllers
 
         public LogsController(ILogService service)
         {
-            _service = service;      
+            Service = service;      
         }
 
         #endregion
@@ -38,7 +38,7 @@ namespace Registone.LogCenter.Api.Controllers
         {
             try
             {
-                return Ok(_service.GetLogs());
+                return Ok(Service.GetLogs());
             }
             catch (Exception ex)
             {
@@ -55,7 +55,7 @@ namespace Registone.LogCenter.Api.Controllers
         {
             try
             {
-                return Ok(_service.GetLogsFiled());
+                return Ok(Service.GetLogsFiled());
             }
             catch (Exception ex)
             {
@@ -73,7 +73,7 @@ namespace Registone.LogCenter.Api.Controllers
 
             try
             {
-                return Ok(_service.FindByTitle(title));
+                return Ok(Service.FindByTitle(title));
             }
             catch (Exception ex)
             {
@@ -91,7 +91,7 @@ namespace Registone.LogCenter.Api.Controllers
 
             try
             {
-                return Ok(_service.GetLogs());
+                return Ok(Service.GetLogs());
             }
             catch (Exception ex)
             {
@@ -108,7 +108,7 @@ namespace Registone.LogCenter.Api.Controllers
             if (string.IsNullOrEmpty(origin)) return BadRequest("Origin is required");
             try
             {
-                return Ok(_service.GetLogs());
+                return Ok(Service.GetLogs());
             }
             catch (Exception ex)
             {
@@ -124,7 +124,7 @@ namespace Registone.LogCenter.Api.Controllers
         {
             try
             {
-                _service.Register(log);
+                Service.Register(log);
                 return Created(string.Empty, log);
             }
             catch (Exception)
@@ -142,7 +142,7 @@ namespace Registone.LogCenter.Api.Controllers
         {
             try
             {
-                _service.ArchiveLog(id);
+                Service.ArchiveLog(id);
                 return Ok();
             }
             catch (Exception ex)
@@ -159,7 +159,7 @@ namespace Registone.LogCenter.Api.Controllers
         {
             try
             {
-                _service.Remove(id);
+                Service.Remove(id);
                 return Ok();
             }
             catch (Exception ex)

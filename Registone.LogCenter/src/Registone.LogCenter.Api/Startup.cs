@@ -10,6 +10,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using System.Text;
 using Registone.LogCenter.Data;
+using Registone.LogCenter.Services;
 
 namespace Registone.LogCenter.Api
 {
@@ -37,6 +38,7 @@ namespace Registone.LogCenter.Api
             services.AddScoped<ILogService, LogService>(); 
             services.AddScoped<IUserRepository, UserRepository>();
             services.AddScoped<IUserService, UserService>();
+            services.AddScoped<IEncryptor, Encryptor>();
 
             var appSettingsSection = Configuration.GetSection("AppSettings");
 

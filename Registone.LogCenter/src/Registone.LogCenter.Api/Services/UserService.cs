@@ -2,20 +2,25 @@
 using Registone.LogCenter.Domain.Exceptions;
 using Registone.LogCenter.Domain.Interfaces;
 using Registone.LogCenter.Domain.Models;
+using Registone.LogCenter.Services;
 
 namespace Registone.LogCenter.Api.Services
 {
     public class UserService : IUserService
     {
         #region Properties
+
         private IUserRepository Repository { get; set; }
+        public IEncryptor Encryptor { get; set; }
 
         #endregion
 
         #region Constructor
-        public UserService(IUserRepository repository)
+
+        public UserService(IUserRepository repository, IEncryptor encryptor)
         {
             Repository = repository;
+            Encryptor = encryptor;
         }
 
         #endregion
@@ -27,7 +32,7 @@ namespace Registone.LogCenter.Api.Services
             var userRegister = new User
             {
                 Email = user.Email,
-                Password = user.Password
+                Password = Encryptor.Encrypt(user.Password)
             };
 
             var result = Repository.Login(userRegister);
@@ -43,10 +48,15 @@ namespace Registone.LogCenter.Api.Services
 
         public void Register(UserDto user)
         {
+            if(Repository.GetUserByEmail(user.Email) != null)
+            {
+                throw new UserEmailAlreadyExistsException(user.Email);
+            }
+
             var userRegister = new User
             {
                 Email = user.Email,
-                Password = user.Password
+                Password = Encryptor.Encrypt(user.Password)
             };
 
             Repository.Register(userRegister);

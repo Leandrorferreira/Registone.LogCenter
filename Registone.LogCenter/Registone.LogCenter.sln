@@ -11,9 +11,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{9C9A6373-B33
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Registone.LogCenter.Api", "src\Registone.LogCenter.Api\Registone.LogCenter.Api.csproj", "{C938DD38-FE49-4BD0-B211-224B1393862D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Registone.LogCenter.Data", "src\Registone.LogCenter.Data\Registone.LogCenter.Data\Registone.LogCenter.Data.csproj", "{45E20063-9537-4592-BF09-C6DE66A9F0D7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Registone.LogCenter.Data", "src\Registone.LogCenter.Data\Registone.LogCenter.Data\Registone.LogCenter.Data.csproj", "{45E20063-9537-4592-BF09-C6DE66A9F0D7}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Registone.LogCenter.Domain", "src\Registone.LogCenter.Domain\Registone.LogCenter.Domain.csproj", "{E7367FC9-CF5E-468F-A57F-86234FABE1E9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Registone.LogCenter.Services", "src\Registone.LogCenter.Services\Registone.LogCenter.Services.csproj", "{2A7DB962-A0CB-474A-BCBC-8FAA3A74AC5D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -37,6 +39,10 @@ Global
 		{E7367FC9-CF5E-468F-A57F-86234FABE1E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E7367FC9-CF5E-468F-A57F-86234FABE1E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E7367FC9-CF5E-468F-A57F-86234FABE1E9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2A7DB962-A0CB-474A-BCBC-8FAA3A74AC5D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2A7DB962-A0CB-474A-BCBC-8FAA3A74AC5D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2A7DB962-A0CB-474A-BCBC-8FAA3A74AC5D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2A7DB962-A0CB-474A-BCBC-8FAA3A74AC5D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -46,6 +52,7 @@ Global
 		{C938DD38-FE49-4BD0-B211-224B1393862D} = {9C9A6373-B334-4FC9-A93D-951DC1197AC6}
 		{45E20063-9537-4592-BF09-C6DE66A9F0D7} = {9C9A6373-B334-4FC9-A93D-951DC1197AC6}
 		{E7367FC9-CF5E-468F-A57F-86234FABE1E9} = {9C9A6373-B334-4FC9-A93D-951DC1197AC6}
+		{2A7DB962-A0CB-474A-BCBC-8FAA3A74AC5D} = {9C9A6373-B334-4FC9-A93D-951DC1197AC6}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C1AA37ED-1E5E-4639-AA2C-E74670CE2757}

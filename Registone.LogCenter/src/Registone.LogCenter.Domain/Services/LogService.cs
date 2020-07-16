@@ -146,7 +146,7 @@ namespace Registone.LogCenter.Domain.Services
 
         public IList<LogDto> FindByLevel(string level)
         {
-            var logs = LogRepository.GetByTitle(level);
+            var logs = LogRepository.GetByLevel(level);
 
             if (logs is null) throw new LogNotFoundException();
 

@@ -33,25 +33,10 @@ namespace Registone.LogCenter.Tests
         [Fact]
         public void GetLogs_Succeesfully()
         {
-            var logs = new List<Log> {
-                new Log
-                {
-                    CreatedAt = new DateTime(),
-                    Details = "string",
-                    Filed = false,
-                    Id = 1,
-                    Level = "string",
-                    Origin = "string",
-                    Title = "string",
-                    UserId = 1
-                }
-            };
+            var logs = GetLogs();
 
             LogRepository.Setup(x => x.Get()).Returns(logs);
-            var user = new User 
-            {
-                Email = "string"
-            };
+            var user = GetUser();
             UserRepository.Setup(x => x.GetUserById(It.IsAny<int>())).Returns(user);
 
             var service = new LogService(LogRepository.Object, UserRepository.Object);
@@ -62,67 +47,141 @@ namespace Registone.LogCenter.Tests
             Assert.Equal(user.Email, result[0].UserEmail);
         }
 
-        //[Fact]
-        //public void Should_Register_New_A_Log()
-        //{
-        //    var log = new LogRegisterDto
-        //    {
-        //        Level = "Error",
-        //        Origin = "Origin",
-        //        Details = "Details",
-        //        Title = "Title",
-        //        UserEmail = "test@test.com"
-        //    };
+        [Fact]
+        public void GetLogsFiled_Succeesfully()
+        {
+            var logs = GetLogs();
+            LogRepository.Setup(x => x.GetFileds()).Returns(logs);
+            var user = GetUser();
+            UserRepository.Setup(x => x.GetUserById(It.IsAny<int>())).Returns(user);
 
-        //    logService.Register(log);
-        //}
+            var service = new LogService(LogRepository.Object, UserRepository.Object);
 
-        //[Fact]
-        //public void Should_Archive_Log()
-        //{
-        //    logService.ArchiveLog(7);
-        //}
+            var result = service.GetLogsFiled();
 
-        //[Fact]
-        //public void Should_Remove_Log()
-        //{
-        //    logService.Remove(7);
-        //}
+            Assert.NotNull(result);
+            Assert.Equal(user.Email, result[0].UserEmail);
+        }
 
-        //[Theory]
-        //[InlineData("Error")]
-        //[InlineData("Unique")]
-        //[InlineData("Title")]
-        //public void Should_Return_Right_Log_When_Find_By_Title(string title)
-        //{
-        //    var result = logService.FindByTitle(title);
+        [Fact]
+        public void Register_Succeesfully()
+        {
+            var user = GetUser();
+            LogRepository.Setup(x => x.Register(It.IsAny<Log>()));
+            UserRepository.Setup(x => x.GetUserByEmail(It.IsAny<string>())).Returns(user);
+            var service = new LogService(LogRepository.Object, UserRepository.Object);
+           
+            service.Register(GetLogRegisterDto());
+        }
 
-        //    Assert.NotNull(result);
-        //}
+        [Fact]
+        public void ArchiveLog_Succeesfully()
+        {
+            var user = GetUser();
+            LogRepository.Setup(x => x.GetById(It.IsAny<int>())).Returns(GetLog());
+            LogRepository.Setup(x => x.Update(It.IsAny<Log>()));
+            var service = new LogService(LogRepository.Object, UserRepository.Object);
 
-        //[Theory]
-        //[InlineData("Origem do log")]
-        //[InlineData("Origem do log 2")]
-        //[InlineData("Origem do log 3")]
-        //public void Should_Return_Right_Log_When_Find_By_Origin(string origin)
-        //{
-        //    var result = logService.FindByOrigin(origin);
+            service.ArchiveLog(1);
+        }
 
-        //    Assert.Equal(origin, result[0].Origin);
-        //}
+        [Fact]
+        public void Remove_Succeesfully()
+        {
+            var user = GetUser();
+            LogRepository.Setup(x => x.GetById(It.IsAny<int>())).Returns(GetLog());
+            LogRepository.Setup(x => x.Remove(It.IsAny<Log>()));
 
-        //[Theory]
-        //[InlineData("Error")]
-        //[InlineData("Warning")]
-        //[InlineData("Debug")]
-        //public void Should_Return_Logs_When_Find_By_Level(string level)
-        //{
+            var service = new LogService(LogRepository.Object, UserRepository.Object);
 
-        //    var result = logService.FindByLevel(level);
+            service.Remove(1);
+        }
 
-        //    Assert.NotNull(result);
-        //}
+        [Fact]
+        public void FindByTitle_Succeesfully()
+        {
+            LogRepository.Setup(x => x.GetByTitle(It.IsAny<string>())).Returns(GetLogs());
+            UserRepository.Setup(x => x.GetUserById(It.IsAny<int>())).Returns(GetUser());
 
-        #endregion      
+            var service = new LogService(LogRepository.Object, UserRepository.Object);
+
+            var result = service.FindByTitle("test");
+
+            Assert.NotNull(result);
+        }
+
+        [Fact]
+        public void FindByLevel_Succeesfully()
+        {
+            LogRepository.Setup(x => x.GetByLevel(It.IsAny<string>())).Returns(GetLogs());
+            UserRepository.Setup(x => x.GetUserById(It.IsAny<int>())).Returns(GetUser());
+
+            var service = new LogService(LogRepository.Object, UserRepository.Object);
+
+            var result = service.FindByLevel("test");
+
+            Assert.NotNull(result);
+        }
+
+        [Fact]
+        public void FindByOrigin_Succeesfully()
+        {
+            LogRepository.Setup(x => x.GetByOrigin(It.IsAny<string>())).Returns(GetLogs());
+            UserRepository.Setup(x => x.GetUserById(It.IsAny<int>())).Returns(GetUser());
+
+            var service = new LogService(LogRepository.Object, UserRepository.Object);
+
+            var result = service.FindByOrigin("test");
+
+            Assert.NotNull(result);
+        }
+
+        #endregion
+
+        #region Private Methods
+
+        private IList<Log> GetLogs()
+        {
+            return new List<Log> {
+                GetLog()
+            };
+        }
+
+        private Log GetLog()
+        {
+            return new Log
+            {
+                CreatedAt = new DateTime(),
+                Details = "string",
+                Filed = false,
+                Id = 1,
+                Level = "string",
+                Origin = "string",
+                Title = "string",
+                UserId = 1
+            };
+        }
+
+        private User GetUser()
+        {
+            return new User
+            {
+                Email = "test"
+            };
+        }
+
+        private LogRegisterDto GetLogRegisterDto()
+        {
+            return new LogRegisterDto
+            {
+                Details = "string",
+                Level = "string",
+                Origin = "string",
+                Title = "string",
+                UserEmail = "string"
+            };
+        }
+
+        #endregion
     }
 }

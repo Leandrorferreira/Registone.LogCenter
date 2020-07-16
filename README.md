@@ -1,8 +1,8 @@
-# LOG CENTER - API (Final Project)
+# REGISTONE API 
 
-## What is the Log Center Project?
+## What is the Registone Project?
 
-The Log Center is a project written in .NET Core. 
+The Registone Log Center is a project written in .NET Core. 
 This project was carried out based on the lessons learned from Codenation's AceleraDev C# course in partnership with Stone.
 
 ### Technologies Used
@@ -12,15 +12,16 @@ This project was carried out based on the lessons learned from Codenation's Acel
 - XUnit
 - SQL Server
 - Swagger
+- Docker
+- Azure DevOps
 
-### Clonando o repositório:
+### Cloning the repository:
 https://github.com/Leandrorferreira/Codenation.LogCenter.git
   
 ### Documentação API:
 http://localhost:5000/swagger/index.html
 
-
-### Tabela de Endpoints
+### Endpoints
 
 Endpoint | HTTP Verb | Description | HTTP Status Code
 -------- | --------- | ----------- | ----------------

@@ -10,7 +10,7 @@ using Registone.LogCenter.Data;
 namespace Registone.LogCenter.Data.Migrations
 {
     [DbContext(typeof(LogCenterContext))]
-    [Migration("20200715104540_Initial")]
+    [Migration("20200722004253_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

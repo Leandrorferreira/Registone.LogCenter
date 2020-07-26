@@ -15,7 +15,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Registone.LogCenter.Data", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Registone.LogCenter.Domain", "src\Registone.LogCenter.Domain\Registone.LogCenter.Domain.csproj", "{E7367FC9-CF5E-468F-A57F-86234FABE1E9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Registone.LogCenter.Services", "src\Registone.LogCenter.Services\Registone.LogCenter.Services.csproj", "{2A7DB962-A0CB-474A-BCBC-8FAA3A74AC5D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Registone.LogCenter.Services", "src\Registone.LogCenter.Services\Registone.LogCenter.Services.csproj", "{2A7DB962-A0CB-474A-BCBC-8FAA3A74AC5D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

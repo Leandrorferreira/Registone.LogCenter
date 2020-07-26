@@ -13,13 +13,13 @@ This project was carried out based on the lessons learned from Codenation's Acel
 - SQL Server
 - Swagger
 - Docker
-- Azure DevOps
+- Heroku
 
 ### Cloning the repository:
 https://github.com/Leandrorferreira/Codenation.LogCenter.git
   
 ### Documentação API:
-http://localhost:5000/swagger/index.html
+https://registone-api.herokuapp.com/swagger/index.html
 
 ### Endpoints
 

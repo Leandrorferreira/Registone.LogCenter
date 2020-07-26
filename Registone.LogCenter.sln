@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.30104.148
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Registone.LogCenter.Api", "Registone.LogCenter.Api\Registone.LogCenter.Api.csproj", "{B40CC941-FC6E-4D04-AB4C-659C503E86D7}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Registone.LogCenter.Data", "Registone.LogCenter.Data\Registone.LogCenter.Data\Registone.LogCenter.Data.csproj", "{6C2435C3-FA0E-4787-91A0-A5B43526E343}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Registone.LogCenter.Data", "Registone.LogCenter.Data\Registone.LogCenter.Data.csproj", "{6C2435C3-FA0E-4787-91A0-A5B43526E343}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Registone.LogCenter.Domain", "Registone.LogCenter.Domain\Registone.LogCenter.Domain.csproj", "{3D28D4BF-B6BA-4448-8153-811ADB482C1A}"
 EndProject

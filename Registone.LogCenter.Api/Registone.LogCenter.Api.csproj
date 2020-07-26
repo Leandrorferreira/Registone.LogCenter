@@ -28,7 +28,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Registone.LogCenter.Data\Registone.LogCenter.Data\Registone.LogCenter.Data.csproj" />
+    <ProjectReference Include="..\Registone.LogCenter.Data\Registone.LogCenter.Data.csproj" />
     <ProjectReference Include="..\Registone.LogCenter.Domain\Registone.LogCenter.Domain.csproj" />
     <ProjectReference Include="..\Registone.LogCenter.Services\Registone.LogCenter.Services.csproj" />
   </ItemGroup>

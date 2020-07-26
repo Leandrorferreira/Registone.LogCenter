@@ -19,7 +19,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Registone.LogCenter.Domain\Registone.LogCenter.Domain.csproj" />
+    <ProjectReference Include="..\Registone.LogCenter.Domain\Registone.LogCenter.Domain.csproj" />
   </ItemGroup>
 
 </Project>

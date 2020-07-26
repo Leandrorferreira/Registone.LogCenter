@@ -17,8 +17,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\Registone.LogCenter.Api\Registone.LogCenter.Api.csproj" />
-    <ProjectReference Include="..\..\src\Registone.LogCenter.Domain\Registone.LogCenter.Domain.csproj" />
+    <ProjectReference Include="..\Registone.LogCenter.Api\Registone.LogCenter.Api.csproj" />
+    <ProjectReference Include="..\Registone.LogCenter.Domain\Registone.LogCenter.Domain.csproj" />
   </ItemGroup>
 
   <ProjectExtensions><VisualStudio><UserProperties fakedata_4logs_1json__JsonSchema="https://json-schema.org/draft-04/schema" /></VisualStudio></ProjectExtensions>

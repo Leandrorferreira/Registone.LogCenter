@@ -23,8 +23,8 @@ https://registone-api.herokuapp.com/swagger/index.html
 
 ### Endpoints
 
-Endpoint | HTTP Verb | Description | HTTP Status Code
--------- | --------- | ----------- | ----------------
+Endpoint                 | HTTP Verb | Description | HTTP Status Code
+------------------------ | --------- | ----------- | ----------------
 https://registone-api.herokuapp.com/api/account/register | POST | this endpoint receives an email and password to register the user | 201 Created, 422 Client Error
 https://registone-api.herokuapp.com/api/account/login | POST | This endpoint receives an email and password and logs in | 200 Success, 404 Not Found
 https://registone-api.herokuapp.com/api/log | GET | This endpoint should only return records that have not been archived | 200 Success, 401 Unauthorized, 404 Not Found
